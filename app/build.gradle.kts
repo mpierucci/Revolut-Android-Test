@@ -42,9 +42,10 @@ dependencies {
     implementation(Libs.AndroidX.appCompat)
     implementation(Libs.AndroidX.Ktx.core)
     implementation(Libs.AndroidX.constraintLayout)
+    implementation(Libs.timber)
 
     kapt(Libs.Dagger.compiler)
-    
+
     testImplementation(TestLibs.jUnit)
     androidTestImplementation(TestLibs.testRunner)
     androidTestImplementation(TestLibs.Esspresso.core)
