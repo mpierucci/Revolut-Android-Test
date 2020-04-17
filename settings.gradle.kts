@@ -1,2 +1,2 @@
 rootProject.name = "Revolut"
-include(":app")
+include(":app",":network")
