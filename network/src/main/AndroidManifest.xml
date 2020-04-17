@@ -1,2 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mpierucci.android.revolut.network" />
+    package="com.mpierucci.android.revolut.network">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+</manifest>

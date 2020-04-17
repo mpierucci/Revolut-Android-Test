@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -36,10 +37,15 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+    implementation(project(":network"))
     implementation(Libs.kotlinStdlib)
     implementation(Libs.AndroidX.appCompat)
     implementation(Libs.AndroidX.Ktx.core)
     implementation(Libs.AndroidX.constraintLayout)
+    implementation(Libs.timber)
+
+    kapt(Libs.Dagger.compiler)
+
     testImplementation(TestLibs.jUnit)
     androidTestImplementation(TestLibs.testRunner)
     androidTestImplementation(TestLibs.Esspresso.core)

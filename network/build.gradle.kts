@@ -28,7 +28,7 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(Libs.kotlinStdlib)
 
-    implementation(Libs.Retrofit.retrofit)
+    api(Libs.Retrofit.retrofit)
     api(Libs.Dagger.core)
     implementation(Libs.okHttp)
     kapt(Libs.Dagger.compiler)
