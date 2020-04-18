@@ -43,10 +43,18 @@ dependencies {
     implementation(Libs.AndroidX.Ktx.core)
     implementation(Libs.AndroidX.constraintLayout)
     implementation(Libs.timber)
+    implementation(Libs.Moshi.core)
+    implementation(Libs.Rx.java)
+    implementation(Libs.Rx.android)
+    implementation(Libs.Rx.bindings)
+
 
     kapt(Libs.Dagger.compiler)
+    kapt(Libs.Moshi.codeGen)
 
     testImplementation(TestLibs.jUnit)
+    testImplementation(TestLibs.mockitoKotlin)
+    testImplementation(TestLibs.assertJ)
     androidTestImplementation(TestLibs.testRunner)
     androidTestImplementation(TestLibs.Esspresso.core)
 }

@@ -27,9 +27,12 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(Libs.kotlinStdlib)
+    implementation(Libs.Retrofit.moshiConverter)
+    implementation(Libs.Retrofit.rxAdapter)
+    implementation(Libs.okHttp)
 
     api(Libs.Retrofit.retrofit)
     api(Libs.Dagger.core)
-    implementation(Libs.okHttp)
+
     kapt(Libs.Dagger.compiler)
 }

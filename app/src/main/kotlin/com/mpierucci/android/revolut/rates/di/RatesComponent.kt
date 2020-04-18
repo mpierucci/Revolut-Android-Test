@@ -5,7 +5,7 @@ import com.mpierucci.android.revolut.rates.ui.RatesActivity
 import dagger.Component
 
 
-@Component(dependencies = [AppComponent::class])
+@Component(dependencies = [AppComponent::class], modules = [RatesModule::class])
 @FeatureScope
 interface RatesComponent {
 
