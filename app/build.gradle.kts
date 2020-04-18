@@ -24,6 +24,8 @@ android {
 
     sourceSets["main"].java.srcDir("src/main/kotlin")
 
+    viewBinding.isEnabled = true
+
     buildTypes {
         getByName("release") {
             isMinifyEnabled = true
@@ -35,18 +37,38 @@ android {
     }
 }
 
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+
+
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(project(":network"))
     implementation(Libs.kotlinStdlib)
     implementation(Libs.AndroidX.appCompat)
     implementation(Libs.AndroidX.Ktx.core)
+    implementation(Libs.AndroidX.Ktx.activity)
     implementation(Libs.AndroidX.constraintLayout)
     implementation(Libs.timber)
+    implementation(Libs.Moshi.core)
+    implementation(Libs.Rx.java)
+    implementation(Libs.Rx.android)
+    implementation(Libs.Rx.bindings)
+    implementation(Libs.AndroidX.recyclerView)
+    implementation(Libs.AndroidX.LifeCycle.viewModel)
+    implementation(Libs.AndroidX.LifeCycle.liveData)
+
 
     kapt(Libs.Dagger.compiler)
+    kapt(Libs.Moshi.codeGen)
 
     testImplementation(TestLibs.jUnit)
+    testImplementation(TestLibs.mockitoKotlin)
+    testImplementation(TestLibs.assertJ)
     androidTestImplementation(TestLibs.testRunner)
     androidTestImplementation(TestLibs.Esspresso.core)
 }
