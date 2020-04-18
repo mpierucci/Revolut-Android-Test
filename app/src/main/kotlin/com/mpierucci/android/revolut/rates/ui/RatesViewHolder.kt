@@ -12,11 +12,11 @@ class RatesViewHolder(private val binding: RateItemListBinding) :
         binding.currencyName.text = itemView.context.getString(rate.nameRes)
         binding.currencyCode.text = rate.currencyId
         binding.currencyFlag.setImageResource(rate.flagRes)
-        binding.currencyEquivalence.setText(rate.convertedValue)
-        binding.currencyEquivalence.isEnabled = rate.editable
+        binding.currencyConvertedValue.setText(rate.convertedValue)
+        binding.currencyConvertedValue.isEnabled = rate.editable
     }
 
     fun updateConversion(convertedValue: String) {
-        binding.currencyEquivalence.setText(convertedValue)
+        binding.currencyConvertedValue.setText(convertedValue)
     }
 }

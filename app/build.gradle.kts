@@ -37,12 +37,21 @@ android {
     }
 }
 
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+
+
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(project(":network"))
     implementation(Libs.kotlinStdlib)
     implementation(Libs.AndroidX.appCompat)
     implementation(Libs.AndroidX.Ktx.core)
+    implementation(Libs.AndroidX.Ktx.activity)
     implementation(Libs.AndroidX.constraintLayout)
     implementation(Libs.timber)
     implementation(Libs.Moshi.core)
@@ -50,6 +59,8 @@ dependencies {
     implementation(Libs.Rx.android)
     implementation(Libs.Rx.bindings)
     implementation(Libs.AndroidX.recyclerView)
+    implementation(Libs.AndroidX.LifeCycle.viewModel)
+    implementation(Libs.AndroidX.LifeCycle.liveData)
 
 
     kapt(Libs.Dagger.compiler)

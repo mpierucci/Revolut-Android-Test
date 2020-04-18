@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/grid_1"
-        android:textSize="16sp"
+        android:textAppearance="@style/RateCurrencyCodeTextAppearance"
         app:layout_constraintStart_toEndOf="@id/currencyFlag"
         app:layout_constraintTop_toTopOf="@id/currencyFlag"
         tools:text="UK" />
@@ -32,19 +32,19 @@
         android:id="@+id/currencyName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
+        android:textAppearance="@style/RateCurrencyNameDescriptionTextAppearance"
         app:layout_constraintStart_toStartOf="@id/currencyCode"
         app:layout_constraintTop_toBottomOf="@id/currencyCode"
         tools:text="British Pound" />
 
     <EditText
-        android:id="@+id/currencyEquivalence"
+        android:id="@+id/currencyConvertedValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/grid_2"
         android:digits="1234567890"
         android:inputType="numberDecimal"
-        android:textSize="20sp"
+        android:textAppearance="@style/RateConvertedValueTextAppearance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

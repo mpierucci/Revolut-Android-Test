@@ -1,6 +1,6 @@
 package com.mpierucci.android.revolut.rates.domain
 
-internal sealed class Rate() {
+sealed class Rate() {
     abstract val rateValue: Float
     abstract val id: String
 

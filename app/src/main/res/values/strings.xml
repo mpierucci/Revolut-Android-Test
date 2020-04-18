@@ -33,4 +33,5 @@
     <string name="south_africa_currency">South African Rand</string>
     <string name="russia_currency">Russian Ruble</string>
     <string name="norway_currency">Norwegian Krone</string>
+    <string name="rates_screen_title">Rates</string>
 </resources>
