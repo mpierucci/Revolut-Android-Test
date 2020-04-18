@@ -7,7 +7,7 @@ import timber.log.Timber
 internal fun RatesResponse.toRateList(): List<Rate> {
     val domainRates = mutableListOf<Rate>()
 
-    baseCurrency?.toRate(0f)?.let { responderRate ->
+    baseCurrency?.toRate(1f)?.let { responderRate ->
         domainRates.add(responderRate)
     }
 

@@ -35,6 +35,7 @@ class RateResponseMappingTest {
         val responder = model.first()
 
         assertThat(responder).isInstanceOf(Rate.Europe::class.java)
+        assertThat(responder.rateValue).isEqualTo(1f)
     }
 
     @Test

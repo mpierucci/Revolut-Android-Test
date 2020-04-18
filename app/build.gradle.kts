@@ -24,6 +24,8 @@ android {
 
     sourceSets["main"].java.srcDir("src/main/kotlin")
 
+    viewBinding.isEnabled = true
+
     buildTypes {
         getByName("release") {
             isMinifyEnabled = true
@@ -47,6 +49,7 @@ dependencies {
     implementation(Libs.Rx.java)
     implementation(Libs.Rx.android)
     implementation(Libs.Rx.bindings)
+    implementation(Libs.AndroidX.recyclerView)
 
 
     kapt(Libs.Dagger.compiler)
