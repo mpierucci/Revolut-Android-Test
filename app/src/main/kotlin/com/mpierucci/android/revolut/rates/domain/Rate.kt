@@ -33,7 +33,7 @@ internal sealed class Rate() {
     data class Russia(override val rateValue: Float, override val id: String) : Rate()
     data class Sweden(override val rateValue: Float, override val id: String) : Rate()
     data class Singapore(override val rateValue: Float, override val id: String) : Rate()
-    data class ThaiBaht(override val rateValue: Float, override val id: String) : Rate()
+    data class Thailand(override val rateValue: Float, override val id: String) : Rate()
     data class NorthAmerica(override val rateValue: Float, override val id: String) : Rate()
     data class SouthAfrica(override val rateValue: Float, override val id: String) : Rate()
 }

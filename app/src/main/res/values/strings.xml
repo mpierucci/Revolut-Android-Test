@@ -1,3 +1,34 @@
 <resources>
     <string name="app_name">Revolut</string>
+
+    <string name="australia_currency">Australian Dollar</string>
+    <string name="eu_currency">Euro</string>
+    <string name="bulgaria_currency">Bulgarian Lev</string>
+    <string name="brazil_currency">Brazilian Real</string>
+    <string name="canada_currency">Canadian Dollar</string>
+    <string name="switzerland_currency">Swiss Franc</string>
+    <string name="china_currency">Chinese Yuan</string>
+    <string name="czech_currency">Czech Koruna</string>
+    <string name="denmark_currency">Danish Krone</string>
+    <string name="uk_currency">British Pound</string>
+    <string name="hong_kong_currency">Hong Kong Dollar</string>
+    <string name="croatia_currency">Croatian Kuna</string>
+    <string name="hungary_currency">Hungarian Forint</string>
+    <string name="indonesia_currency">Indonesian Rupiah</string>
+    <string name="israel_currency">Israeli New Shekel</string>
+    <string name="india_currency">Indian Rupee</string>
+    <string name="iceland_currency">Icelandic Króna</string>
+    <string name="japan_currency">Japanese Yen</string>
+    <string name="south_korea_currency">South Korean won</string>
+    <string name="mexico_currency">Mexican Peso</string>
+    <string name="malaysian_currency">Malaysian Ringgit</string>
+    <string name="new_zealand_currency">New Zealand Dollar</string>
+    <string name="philippine_currency">Philippine peso</string>
+    <string name="poland_currency">Poland zloty</string>
+    <string name="romania_currency">Romanian Leu</string>
+    <string name="sweden_currency">Swedish Krona</string>
+    <string name="singapore_currency">Singapore Dollar</string>
+    <string name="thailand_currency">Thai Baht</string>
+    <string name="usa_currency">US Dollar</string>
+    <string name="south_africa_currency">South African Rand</string>
 </resources>

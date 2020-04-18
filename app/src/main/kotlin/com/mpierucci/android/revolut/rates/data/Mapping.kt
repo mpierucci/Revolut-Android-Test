@@ -53,7 +53,7 @@ internal fun String.toRate(rateValue: Float): Rate? {
         "RUB" -> Rate.Russia(rateValue, this)
         "SEK" -> Rate.Sweden(rateValue, this)
         "SGD" -> Rate.Singapore(rateValue, this)
-        "THB" -> Rate.ThaiBaht(rateValue, this)
+        "THB" -> Rate.Thailand(rateValue, this)
         "USD" -> Rate.NorthAmerica(rateValue, this)
         "ZAR" -> Rate.SouthAfrica(rateValue, this)
         else -> {

@@ -208,7 +208,7 @@ class RateMappingTest {
     fun `maps into thai baht  rate`() {
         val model = "THB".toRate(4f)
 
-        assertThat(model).isInstanceOf(Rate.ThaiBaht::class.java)
+        assertThat(model).isInstanceOf(Rate.Thailand::class.java)
     }
 
     @Test
