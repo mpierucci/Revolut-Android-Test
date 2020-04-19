@@ -13,7 +13,8 @@ internal class RatesRepositoryImpl @Inject constructor(
     override fun getRates(baseCurrency: String): Flowable<List<Rate>> {
         return ratesApi.getRates(baseCurrency)
             .subscribeOn(Schedulers.io())
-            .map { it.toRateList() }
+            .map {
+                it.toRateList()
+            }
     }
-
 }
