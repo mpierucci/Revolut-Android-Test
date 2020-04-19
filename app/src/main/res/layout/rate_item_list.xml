@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground">
 
     <ImageView
         android:id="@+id/currencyFlag"
@@ -42,7 +43,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/grid_2"
-        android:digits="1234567890"
+        android:digits="1234567890."
+        android:imeOptions="actionDone"
         android:inputType="numberDecimal"
         android:textAppearance="@style/RateConvertedValueTextAppearance"
         app:layout_constraintBottom_toBottomOf="parent"
