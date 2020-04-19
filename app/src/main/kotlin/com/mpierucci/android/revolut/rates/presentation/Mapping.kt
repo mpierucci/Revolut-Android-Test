@@ -2,6 +2,7 @@ package com.mpierucci.android.revolut.rates.presentation
 
 import com.mpierucci.android.revolut.R
 import com.mpierucci.android.revolut.rates.domain.Rate
+import com.mpierucci.android.revolut.rates.domain.Result
 import java.text.DecimalFormat
 
 
@@ -226,4 +227,20 @@ internal fun Rate.toViewModel(editable: Boolean, responderQuantity: Float): Rate
 private val twoDecimalFormats = DecimalFormat("#.##")
 internal fun Float.formatUpTwoDecimals(): String {
     return twoDecimalFormats.format(this)
+}
+
+
+
+//Convenience extension method to clear code in the view model and tests
+fun Result<List<Rate>>.toRateViewModelResult(responderQuantity: Float): Result<List<RateViewModel>> {
+    return when (this) {
+        is Result.Success -> {
+            Result.Success(
+                data.mapIndexed { index, rate ->
+                    rate.toViewModel(index == 0, responderQuantity)
+                }
+            )
+        }
+        is Result.Error -> Result.Error(this.exception)
+    }
 }

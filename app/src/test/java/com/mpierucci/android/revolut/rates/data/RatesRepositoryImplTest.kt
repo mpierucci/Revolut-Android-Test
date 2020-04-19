@@ -17,9 +17,11 @@ class RatesRepositoryImplTest {
 
         whenever(mockedApi.getRates(any())).thenReturn(Flowable.just(mockedResponse))
 
-        repository.getRates("EUR").test()
+        val observer = repository.getRates("EUR").test()
 
         verify(mockedApi).getRates("EUR")
         verify(mockedResponse).toRateList()
+
+        observer.dispose()
     }
 }
