@@ -35,4 +35,5 @@
     <string name="norway_currency">Norwegian Krone</string>
     <string name="rates_screen_title">Rates</string>
     <string name="responder_quantity_hint">0</string>
+    <string name="error_message">Something went wrong please come back later</string>
 </resources>

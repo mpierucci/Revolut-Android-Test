@@ -1,6 +1,7 @@
 package com.mpierucci.android.revolut.rates.ui
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mpierucci.android.revolut.databinding.ActivityRatesBinding
 import com.mpierucci.android.revolut.di.appComponent
 import com.mpierucci.android.revolut.rates.di.DaggerRatesComponent
+import com.mpierucci.android.revolut.rates.domain.Result
 import com.mpierucci.android.revolut.rates.presentation.RatesViewModel
 import io.reactivex.disposables.CompositeDisposable
 import java.util.concurrent.TimeUnit
@@ -34,7 +36,13 @@ class RatesActivity : AppCompatActivity() {
 
 
         viewModel.rates.observe(this, Observer {
-            adapter.submitList(it)
+            when (it) {
+                is Result.Success -> adapter.submitList(it.data)
+                is Result.Error -> {
+                    binding.rates.visibility = View.GONE
+                    binding.errorGroup.visibility = View.VISIBLE
+                }
+            }
         })
     }
 
@@ -61,9 +69,9 @@ class RatesActivity : AppCompatActivity() {
     private fun setUpRateList() {
         binding.rates.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         binding.rates.adapter = adapter
-        adapter.registerAdapterDataObserver(object : RecyclerView.AdapterDataObserver(){
+        adapter.registerAdapterDataObserver(object : RecyclerView.AdapterDataObserver() {
             override fun onItemRangeMoved(fromPosition: Int, toPosition: Int, itemCount: Int) {
-                binding.rates.smoothScrollToPosition(0)
+                binding.rates.scrollToPosition(0)
             }
         })
     }
