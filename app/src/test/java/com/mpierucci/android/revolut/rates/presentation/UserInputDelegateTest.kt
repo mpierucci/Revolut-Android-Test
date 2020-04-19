@@ -13,7 +13,7 @@ class UserInputDelegateTest {
         val userInputDelegate = UserInputDelegate(subject)
         val rate = RateViewModel(
             convertedValue = "12",
-            editable = true,
+            firstResponder = true,
             flagRes = R.drawable.ic_hong_kong,
             nameRes = R.string.app_name,
             currencyId = "EUR"
