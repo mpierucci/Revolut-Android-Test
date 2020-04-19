@@ -41,10 +41,10 @@ class RatesActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         disposable.add(adapter.rateClicked.throttleFirst(500, TimeUnit.MILLISECONDS)
-            .subscribe { viewModel.onRateClicked(it) }
+            .subscribe { viewModel.handleRateClicked(it) }
         )
         disposable.add(adapter.responderQuantityChanged.debounce(300, TimeUnit.MILLISECONDS)
-            .subscribe { viewModel.onResponderQuantityChanged(it.toString()) }
+            .subscribe { viewModel.handleResponderQuantityChanged(it.toString()) }
         )
     }
 

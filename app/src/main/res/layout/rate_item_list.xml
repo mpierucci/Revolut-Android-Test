@@ -44,6 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/grid_2"
         android:digits="1234567890."
+        android:imeOptions="actionDone"
         android:inputType="numberDecimal"
         android:textAppearance="@style/RateConvertedValueTextAppearance"
         app:layout_constraintBottom_toBottomOf="parent"

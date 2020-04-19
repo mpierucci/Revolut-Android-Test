@@ -51,8 +51,9 @@ class RatesViewHolder(
 
     fun updateConversion(convertedValue: String, editable: Boolean) {
         ignoreTextChange = true
-        binding.currencyConvertedValue.setText(convertedValue)
+        if(!editable)         binding.currencyConvertedValue.setText(convertedValue)
         binding.currencyConvertedValue.isEnabled = editable
         ignoreTextChange = false
     }
+
 }
