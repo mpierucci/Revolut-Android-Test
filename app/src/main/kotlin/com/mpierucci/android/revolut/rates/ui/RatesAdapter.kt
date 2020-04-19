@@ -39,7 +39,7 @@ class RatesAdapter : ListAdapter<RateViewModel, RatesViewHolder>(RatesUtilCallba
         val rate = getItem(position)
         val payload = payloads.firstOrNull()
         (payload as? String)?.let { convertedValue ->
-            holder.updateConversion(convertedValue, rate.editable)
+            holder.updateConversion(convertedValue, rate.firstResponder)
         } ?: kotlin.run {
             onBindViewHolder(holder, position)
         }

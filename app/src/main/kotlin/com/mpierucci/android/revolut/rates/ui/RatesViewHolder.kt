@@ -34,13 +34,12 @@ class RatesViewHolder(
 
 
     fun bindRate(rate: RateViewModel) {
-        ignoreTextChange = true
+
         binding.currencyName.text = itemView.context.getString(rate.nameRes)
         binding.currencyCode.text = rate.currencyId
         binding.currencyFlag.setImageResource(rate.flagRes)
-        binding.currencyConvertedValue.setText(rate.convertedValue)
-        binding.currencyConvertedValue.isEnabled = rate.editable
-        ignoreTextChange = false
+        updateConvertedValue(rate.convertedValue)
+        binding.currencyConvertedValue.isEnabled = rate.firstResponder
 
         if (adapterPosition == 0) {
             binding.currencyConvertedValue.addTextChangedListener(textWatcher)
@@ -49,10 +48,16 @@ class RatesViewHolder(
         }
     }
 
-    fun updateConversion(convertedValue: String, editable: Boolean) {
+    fun updateConversion(convertedValue: String, isFirstResponder: Boolean) {
+        binding.currencyConvertedValue.isEnabled = isFirstResponder
+        if (!isFirstResponder) {
+            updateConvertedValue(convertedValue)
+        }
+    }
+
+    private fun updateConvertedValue(value: String) {
         ignoreTextChange = true
-        if(!editable)         binding.currencyConvertedValue.setText(convertedValue)
-        binding.currencyConvertedValue.isEnabled = editable
+        binding.currencyConvertedValue.setText(value)
         ignoreTextChange = false
     }
 

@@ -61,5 +61,10 @@ class RatesActivity : AppCompatActivity() {
     private fun setUpRateList() {
         binding.rates.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         binding.rates.adapter = adapter
+        adapter.registerAdapterDataObserver(object : RecyclerView.AdapterDataObserver(){
+            override fun onItemRangeMoved(fromPosition: Int, toPosition: Int, itemCount: Int) {
+                binding.rates.smoothScrollToPosition(0)
+            }
+        })
     }
 }

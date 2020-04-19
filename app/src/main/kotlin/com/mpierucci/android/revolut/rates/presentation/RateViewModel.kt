@@ -7,6 +7,6 @@ data class RateViewModel(
     @DrawableRes val flagRes: Int,
     @StringRes val nameRes: Int,
     val currencyId: String,
-    val editable: Boolean,
+    val firstResponder: Boolean,
     val convertedValue: String
 )

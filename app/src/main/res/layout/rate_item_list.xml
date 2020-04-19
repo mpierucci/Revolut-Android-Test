@@ -46,9 +46,15 @@
         android:digits="1234567890."
         android:imeOptions="actionDone"
         android:inputType="numberDecimal"
+       app:layout_constrainedWidth="true"
         android:textAppearance="@style/RateConvertedValueTextAppearance"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:lines="1"
+        android:hint="@string/responder_quantity_hint"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/currencyName"
+        app:layout_constraintHorizontal_bias="1"
+        android:layout_marginStart="@dimen/grid_2"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="1183.06" />
 
