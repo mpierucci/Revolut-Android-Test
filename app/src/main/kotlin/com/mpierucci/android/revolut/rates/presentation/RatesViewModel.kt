@@ -9,7 +9,6 @@ import com.mpierucci.android.revolut.rates.domain.Result
 import com.mpierucci.android.revolut.rates.presentation.UserInputHandler.UserInput
 import io.reactivex.Flowable
 import io.reactivex.disposables.CompositeDisposable
-import timber.log.Timber
 import javax.inject.Inject
 
 class RatesViewModel @Inject constructor(
@@ -18,9 +17,9 @@ class RatesViewModel @Inject constructor(
 ) : ViewModel(), UserInputHandler by userInputDelegate {
 
     private val compositeDisposable = CompositeDisposable()
-    private val _rates = MutableLiveData<List<RateViewModel>>()
+    private val _rates = MutableLiveData<Result<List<RateViewModel>>>()
 
-    val rates: LiveData<List<RateViewModel>> = _rates
+    val rates: LiveData<Result<List<RateViewModel>>> = _rates
 
     init {
         compositeDisposable.add(
@@ -37,12 +36,7 @@ class RatesViewModel @Inject constructor(
     }
 
     private fun handleRatesResult(result: Result<List<RateViewModel>>) {
-        when (result) {
-            is Result.Success -> _rates.postValue(result.data)
-            is Result.Error -> {
-                Timber.e(result.exception)//Todo handle error after release 1.0
-            }
-        }
+        _rates.postValue(result)
     }
 
     override fun onCleared() {

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mpierucci.android.revolut.databinding.RateItemListBinding
 import com.mpierucci.android.revolut.rates.presentation.RateViewModel
 import io.reactivex.subjects.PublishSubject
+import java.util.regex.Pattern
 
 class RatesViewHolder(
     private val binding: RateItemListBinding,
@@ -17,12 +18,24 @@ class RatesViewHolder(
     private var ignoreTextChange = false
 
     private val textWatcher = object : TextWatcher {
-        override fun afterTextChanged(s: Editable) {}
+
+        private val regex = Pattern.compile("^\$|(^(0|[1-9][0-9]*)(\\.([0-9]{1,2})?)?)")
+        private var previousText: String = ""
+
+        override fun afterTextChanged(s: Editable) {
+            if (regex.matcher(s).matches()) {
+                previousText = s.toString()
+            } else {
+                s.replace(0, s.length, previousText)
+            }
+            if (!ignoreTextChange) textChangePublisher.onNext(s)
+        }
 
         override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
 
         override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-            if (!ignoreTextChange) textChangePublisher.onNext(s)
+
+
         }
     }
 
