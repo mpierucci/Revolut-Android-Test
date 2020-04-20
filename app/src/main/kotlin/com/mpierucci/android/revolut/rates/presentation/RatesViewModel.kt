@@ -10,6 +10,7 @@ import com.mpierucci.android.revolut.rates.domain.Result
 import com.mpierucci.android.revolut.rates.presentation.UserInputHandler.UserInput
 import io.reactivex.Flowable
 import io.reactivex.disposables.CompositeDisposable
+import timber.log.Timber
 
 class RatesViewModel(
     private val ratesInteractor: RatesInteractor,
@@ -22,7 +23,7 @@ class RatesViewModel(
 
     val rates: LiveData<Result<List<RateViewModel>>> = _rates
 
-    init {
+    private fun pollRates() {
         compositeDisposable.add(
             userInputDelegate.userInput.startWith(savedStateHandle.retrieveUserInput())
                 .switchMap(::fetchRates)
@@ -43,10 +44,17 @@ class RatesViewModel(
         _rates.postValue(result)
     }
 
+    fun startPollingRates() {
+        pollRates()
+    }
+
+    fun stopPollingRates() {
+        compositeDisposable.clear()
+    }
+
     override fun onCleared() {
         super.onCleared()
         compositeDisposable.dispose()
     }
-
 
 }

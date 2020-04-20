@@ -4,8 +4,8 @@ import androidx.lifecycle.SavedStateHandle
 import com.mpierucci.android.revolut.rates.domain.Defaults
 import com.mpierucci.android.revolut.rates.presentation.UserInputHandler.UserInput
 
-private const val CURRENCY_KEY = "currency"
-private const val QUANTITY_KEY = "quantity"
+internal const val CURRENCY_KEY = "currency"
+internal const val QUANTITY_KEY = "quantity"
 
 internal fun SavedStateHandle.retrieveUserInput(): UserInput {
     return UserInput(

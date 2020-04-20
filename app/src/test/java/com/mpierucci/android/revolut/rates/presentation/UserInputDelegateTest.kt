@@ -1,6 +1,7 @@
 package com.mpierucci.android.revolut.rates.presentation
 
 import com.mpierucci.android.revolut.R
+import com.mpierucci.android.revolut.rates.domain.Defaults.DEFAULT_CURRENCY_ID
 import com.mpierucci.android.revolut.rates.presentation.UserInputHandler.UserInput
 import io.reactivex.subjects.PublishSubject
 import org.junit.Test
@@ -40,19 +41,7 @@ class UserInputDelegateTest {
         userInputDelegate.handleResponderQuantityChanged("12")
 
         observer.assertValueCount(1)
-        observer.assertValues(UserInput("EUR", 12f))
-
-        observer.dispose()
-    }
-
-    @Test
-    fun `delegate starts with initial values`() {
-        val subject = PublishSubject.create<UserInput>()
-        val userInputDelegate = UserInputDelegate(subject)
-
-        val observer = userInputDelegate.userInput.test()
-
-        observer.assertValues(UserInput("EUR", 1f))
+        observer.assertValues(UserInput(DEFAULT_CURRENCY_ID, 12f))
 
         observer.dispose()
     }

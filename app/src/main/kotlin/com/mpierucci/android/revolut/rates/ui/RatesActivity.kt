@@ -50,6 +50,7 @@ class RatesActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+        viewModel.startPollingRates()
         disposable.add(adapter.rateClicked.throttleFirst(500, TimeUnit.MILLISECONDS)
             .subscribe { viewModel.handleRateClicked(it) }
         )
@@ -60,6 +61,7 @@ class RatesActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
+        viewModel.stopPollingRates()
         disposable.clear()
     }
 
