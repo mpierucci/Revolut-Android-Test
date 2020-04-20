@@ -22,3 +22,8 @@ min sdk it's 21
 ## Demo
 
 https://gfycat.com/disgustinginfatuatedcapeghostfrog
+
+## Disclaimer
+
+The latest di approach to allow save state on process death its a vit verbose.
+ In order to maintain the previous  set up something likes AssistedInject would have been needed.

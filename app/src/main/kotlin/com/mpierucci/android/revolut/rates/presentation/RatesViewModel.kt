@@ -10,7 +10,6 @@ import com.mpierucci.android.revolut.rates.domain.Result
 import com.mpierucci.android.revolut.rates.presentation.UserInputHandler.UserInput
 import io.reactivex.Flowable
 import io.reactivex.disposables.CompositeDisposable
-import timber.log.Timber
 
 class RatesViewModel(
     private val ratesInteractor: RatesInteractor,
