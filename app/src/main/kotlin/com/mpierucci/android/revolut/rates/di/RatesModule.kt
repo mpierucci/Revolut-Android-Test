@@ -3,8 +3,7 @@ package com.mpierucci.android.revolut.rates.di
 import com.mpierucci.android.revolut.rates.data.RatesApi
 import com.mpierucci.android.revolut.rates.data.RatesRepositoryImpl
 import com.mpierucci.android.revolut.rates.domain.RatesRepository
-import com.mpierucci.android.revolut.rates.presentation.UserInputDelegate
-import com.mpierucci.android.revolut.rates.presentation.UserInputHandler
+import com.mpierucci.android.revolut.rates.presentation.*
 import dagger.Module
 import dagger.Provides
 import io.reactivex.subjects.PublishSubject
@@ -21,6 +20,10 @@ internal object RatesModule {
     fun provideRateApi(retrofit: Retrofit): RatesApi = retrofit.create(RatesApi::class.java)
 
     @Provides
-    fun provideUserInputDelegate() : UserInputHandler=
+    fun provideUserInputDelegate(): UserInputHandler =
         UserInputDelegate(PublishSubject.create())
+
+    @Provides
+    fun provideRatesViewModelAssistedProvider(provider: AssistedRatesViewModelProvider)
+            : AssistedViewModelProvider<RatesViewModel> = provider
 }

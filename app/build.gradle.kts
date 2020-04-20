@@ -61,6 +61,7 @@ dependencies {
     implementation(Libs.AndroidX.recyclerView)
     implementation(Libs.AndroidX.LifeCycle.viewModel)
     implementation(Libs.AndroidX.LifeCycle.liveData)
+    implementation(Libs.AndroidX.LifeCycle.savedState)
 
 
     kapt(Libs.Dagger.compiler)
@@ -69,6 +70,7 @@ dependencies {
     testImplementation(TestLibs.jUnit)
     testImplementation(TestLibs.mockitoKotlin)
     testImplementation(TestLibs.assertJ)
+    testImplementation(Libs.AndroidX.LifeCycle.test)
     androidTestImplementation(TestLibs.testRunner)
     androidTestImplementation(TestLibs.Esspresso.core)
 }

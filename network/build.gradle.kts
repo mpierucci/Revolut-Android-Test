@@ -30,6 +30,7 @@ dependencies {
     implementation(Libs.Retrofit.moshiConverter)
     implementation(Libs.Retrofit.rxAdapter)
     implementation(Libs.okHttp)
+    implementation(Libs.Rx.android)
 
     api(Libs.Retrofit.retrofit)
     api(Libs.Dagger.core)
