@@ -1,5 +1,6 @@
 package com.mpierucci.android.revolut.rates.domain
 
+import com.mpierucci.android.revolut.rates.TestSchedulersProvider
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
@@ -11,10 +12,12 @@ import java.util.concurrent.TimeUnit
 
 class RatesInteractorTest {
 
+    private val schedulersProvider = TestSchedulersProvider()
+
     @Test
     fun `tests success result`() {
         val repository = mock<RatesRepository>()
-        val interactor = RatesInteractor(repository)
+        val interactor = RatesInteractor(repository, schedulersProvider)
 
         whenever(repository.getRates(any())).thenReturn(Flowable.just(emptyList()))
 
@@ -28,7 +31,7 @@ class RatesInteractorTest {
     @Test
     fun `tests error result`() {
         val repository = mock<RatesRepository>()
-        val interactor = RatesInteractor(repository)
+        val interactor = RatesInteractor(repository, schedulersProvider)
         val exception = IllegalStateException()
 
         whenever(repository.getRates(any())).thenReturn(Flowable.error(exception))
@@ -44,7 +47,7 @@ class RatesInteractorTest {
     @Test
     fun `tests repeat result`() {
         val repository = mock<RatesRepository>()
-        val interactor = RatesInteractor(repository)
+        val interactor = RatesInteractor(repository, schedulersProvider)
 
         val testScheduler = TestScheduler()
 
