@@ -61,6 +61,7 @@ dependencies {
     implementation(Libs.AndroidX.recyclerView)
     implementation(Libs.AndroidX.LifeCycle.viewModel)
     implementation(Libs.AndroidX.LifeCycle.liveData)
+    implementation(Libs.AndroidX.LifeCycle.savedState)
 
 
     kapt(Libs.Dagger.compiler)

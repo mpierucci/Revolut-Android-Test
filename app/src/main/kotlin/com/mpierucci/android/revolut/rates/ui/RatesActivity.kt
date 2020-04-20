@@ -2,6 +2,7 @@ package com.mpierucci.android.revolut.rates.ui
 
 import android.os.Bundle
 import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,22 +11,23 @@ import com.mpierucci.android.revolut.databinding.ActivityRatesBinding
 import com.mpierucci.android.revolut.di.appComponent
 import com.mpierucci.android.revolut.rates.di.DaggerRatesComponent
 import com.mpierucci.android.revolut.rates.domain.Result
+import com.mpierucci.android.revolut.rates.presentation.AssistedViewModelProvider
 import com.mpierucci.android.revolut.rates.presentation.RatesViewModel
+import com.mpierucci.android.revolut.rates.presentation.RatesViewModelFactory
 import io.reactivex.disposables.CompositeDisposable
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
-import javax.inject.Provider
 
 class RatesActivity : AppCompatActivity() {
 
-    private val viewModel by viewModel { vmProvider.get() }
+    private val viewModel by viewModels<RatesViewModel> { RatesViewModelFactory(vmProvider, this) }
     private val disposable = CompositeDisposable()
     private val adapter = RatesAdapter()
     private lateinit var binding: ActivityRatesBinding
 
 
     @Inject
-    lateinit var vmProvider: Provider<RatesViewModel>
+    lateinit var vmProvider: AssistedViewModelProvider<RatesViewModel>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         DaggerRatesComponent.factory().create(appComponent).inject(this)
