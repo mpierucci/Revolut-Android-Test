@@ -27,7 +27,7 @@ object Libs {
             const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:$lifeCycleVersion"
             const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifeCycleVersion"
             const val savedState = "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifeCycleVersion"
-            const val test = "androidx.arch.core:core-testing:$lifeCycleVersion"
+            const val test = "androidx.arch.core:core-testing:2.1.0"
         }
     }
 

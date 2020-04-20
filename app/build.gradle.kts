@@ -69,7 +69,9 @@ dependencies {
 
     testImplementation(TestLibs.jUnit)
     testImplementation(TestLibs.mockitoKotlin)
+    testImplementation("io.mockk:mockk:1.10.0")
     testImplementation(TestLibs.assertJ)
+    testImplementation(Libs.AndroidX.LifeCycle.test)
     androidTestImplementation(TestLibs.testRunner)
     androidTestImplementation(TestLibs.Esspresso.core)
 }
