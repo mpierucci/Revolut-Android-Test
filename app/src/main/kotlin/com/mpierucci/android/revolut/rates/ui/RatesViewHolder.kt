@@ -23,6 +23,10 @@ class RatesViewHolder(
         private var previousText: String = ""
 
         override fun afterTextChanged(s: Editable) {
+            if (s.isEmpty()) {
+                textChangePublisher.onNext("0")
+                return
+            }
             if (regex.matcher(s).matches()) {
                 previousText = s.toString()
             } else {

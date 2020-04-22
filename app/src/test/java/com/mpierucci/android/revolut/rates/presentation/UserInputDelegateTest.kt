@@ -24,7 +24,7 @@ class UserInputDelegateTest {
         userInputDelegate.handleRateClicked(rate)
 
         observer.assertValueCount(1)
-        observer.assertValues(UserInput("EUR", 12f))
+        observer.assertValues(UserInput("EUR", "12"))
 
         observer.dispose()
     }
@@ -41,7 +41,7 @@ class UserInputDelegateTest {
         userInputDelegate.handleResponderQuantityChanged("12")
 
         observer.assertValueCount(1)
-        observer.assertValues(UserInput(DEFAULT_CURRENCY_ID, 12f))
+        observer.assertValues(UserInput(DEFAULT_CURRENCY_ID, "12"))
 
         observer.dispose()
     }

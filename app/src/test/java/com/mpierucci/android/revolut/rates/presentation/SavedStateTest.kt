@@ -9,13 +9,13 @@ class SavedStateTest {
 
     @Test
     fun `stores user input`() {
-        val userInput = UserInputHandler.UserInput("EUR", 4f)
+        val userInput = UserInputHandler.UserInput("EUR", "4")
         val savedState = mock<SavedStateHandle>()
 
         savedState.saveUserInput(userInput)
 
         verify(savedState).set(CURRENCY_KEY, "EUR")
-        verify(savedState).set(QUANTITY_KEY, 4f)
+        verify(savedState).set(QUANTITY_KEY, "4")
     }
 
     @Test

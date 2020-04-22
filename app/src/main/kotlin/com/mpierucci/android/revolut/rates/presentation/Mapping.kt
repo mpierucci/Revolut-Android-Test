@@ -3,10 +3,11 @@ package com.mpierucci.android.revolut.rates.presentation
 import com.mpierucci.android.revolut.R
 import com.mpierucci.android.revolut.rates.domain.Rate
 import com.mpierucci.android.revolut.rates.domain.Result
+import java.math.BigDecimal
 import java.text.DecimalFormat
 
 
-internal fun Rate.toViewModel(isFirstResponder: Boolean, responderQuantity: Float): RateViewModel {
+internal fun Rate.toViewModel(isFirstResponder: Boolean, responderQuantity: BigDecimal): RateViewModel {
     val convertedValue = rateValue.times(responderQuantity).formatUpTwoDecimals()
     return when (this) {
         is Rate.Europe -> RateViewModel(
@@ -225,14 +226,13 @@ internal fun Rate.toViewModel(isFirstResponder: Boolean, responderQuantity: Floa
 
 
 private val twoDecimalFormats = DecimalFormat("#.##")
-internal fun Float.formatUpTwoDecimals(): String {
+internal fun BigDecimal.formatUpTwoDecimals(): String {
     return twoDecimalFormats.format(this)
 }
 
 
-
 //Convenience extension method to clear code in the view model and tests
-fun Result<List<Rate>>.toRateViewModelResult(responderQuantity: Float): Result<List<RateViewModel>> {
+fun Result<List<Rate>>.toRateViewModelResult(responderQuantity: BigDecimal): Result<List<RateViewModel>> {
     return when (this) {
         is Result.Success -> {
             Result.Success(

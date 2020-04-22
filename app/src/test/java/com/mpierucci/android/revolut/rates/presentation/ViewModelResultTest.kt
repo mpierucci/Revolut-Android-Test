@@ -4,6 +4,7 @@ import com.mpierucci.android.revolut.rates.domain.Rate
 import com.mpierucci.android.revolut.rates.domain.Result
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
+import java.math.BigDecimal
 
 class ViewModelResultTest {
 
@@ -11,7 +12,7 @@ class ViewModelResultTest {
     fun `maps success result`() {
         val domainResult = Result.Success(listOf<Rate>())
 
-        val model = domainResult.toRateViewModelResult(12f)
+        val model = domainResult.toRateViewModelResult(BigDecimal("12"))
 
         assertThat(model).isInstanceOf(Result.Success::class.java)
 
@@ -22,7 +23,7 @@ class ViewModelResultTest {
 
         val domainResult = Result.Error(IllegalArgumentException())
 
-        val model = domainResult.toRateViewModelResult(12f)
+        val model = domainResult.toRateViewModelResult(BigDecimal("12"))
 
         assertThat(model).isInstanceOf(Result.Error::class.java)
     }
