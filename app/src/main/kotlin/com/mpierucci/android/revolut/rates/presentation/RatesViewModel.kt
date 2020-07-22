@@ -10,6 +10,7 @@ import com.mpierucci.android.revolut.rates.domain.Result
 import com.mpierucci.android.revolut.rates.presentation.UserInputHandler.UserInput
 import io.reactivex.Flowable
 import io.reactivex.disposables.CompositeDisposable
+import java.math.BigDecimal
 
 class RatesViewModel(
     private val ratesInteractor: RatesInteractor,
@@ -35,7 +36,7 @@ class RatesViewModel(
         return ratesInteractor.execute(userInput.currencyId)
             .map {
                 savedStateHandle.saveUserInput(userInput)
-                it.toRateViewModelResult(userInput.responderQuantity)
+                it.toRateViewModelResult(BigDecimal( userInput.responderQuantity.toString()))
             }
     }
 

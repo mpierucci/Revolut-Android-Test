@@ -4,13 +4,14 @@ import com.mpierucci.android.revolut.R
 import com.mpierucci.android.revolut.rates.domain.Rate
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
+import java.math.BigDecimal
 
 class RateViewModelMappingTest {
 
     @Test
     fun `maps romania rate`() {
-        val rate = Rate.Romania(3f, "RON")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Romania(BigDecimal("3"), "RON")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_romania,
@@ -25,8 +26,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps australia rate`() {
-        val rate = Rate.Australia(3f, "AUD")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Australia(BigDecimal("3"), "AUD")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_australia,
@@ -41,8 +42,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps bulgaria rate`() {
-        val rate = Rate.Bulgaria(3f, "BGN")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Bulgaria(BigDecimal("3"), "BGN")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_bulgaria,
@@ -57,8 +58,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps brazil rate`() {
-        val rate = Rate.Brazil(3f, "BRL")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Brazil(BigDecimal("3"), "BRL")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_brazil,
@@ -73,8 +74,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps canada rate`() {
-        val rate = Rate.Canada(3f, "CAD")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Canada(BigDecimal("3"), "CAD")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_canada,
@@ -89,8 +90,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps switzerland rate`() {
-        val rate = Rate.Switzerland(3f, "CHF")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Switzerland(BigDecimal("3"), "CHF")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_switzerland,
@@ -105,8 +106,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps china rate`() {
-        val rate = Rate.China(3f, "CNY")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.China(BigDecimal("3"), "CNY")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_china,
@@ -121,8 +122,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps czech rate`() {
-        val rate = Rate.Czech(3f, "CZK")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Czech(BigDecimal("3"), "CZK")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_czech,
@@ -137,8 +138,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps denmark rate`() {
-        val rate = Rate.Denmark(3f, "DKK")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Denmark(BigDecimal("3"), "DKK")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_denmark,
@@ -153,8 +154,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps uk rate`() {
-        val rate = Rate.UK(3f, "GBP")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.UK(BigDecimal("3"), "GBP")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_uk,
@@ -169,8 +170,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps hong kong rate`() {
-        val rate = Rate.HongKong(3f, "HKD")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.HongKong(BigDecimal("3"), "HKD")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_hong_kong,
@@ -185,8 +186,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps croatia rate`() {
-        val rate = Rate.Croatia(3f, "HRK")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Croatia(BigDecimal("3"), "HRK")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_croatia,
@@ -201,8 +202,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps hungary rate`() {
-        val rate = Rate.Hungary(3f, "HUF")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Hungary(BigDecimal("3"), "HUF")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_hungary,
@@ -217,8 +218,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps indonesia rate`() {
-        val rate = Rate.Indonesia(3f, "IDR")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Indonesia(BigDecimal("3"), "IDR")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_indonesia,
@@ -233,8 +234,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps israel rate`() {
-        val rate = Rate.Israel(3f, "ILS")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Israel(BigDecimal("3"), "ILS")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_israel,
@@ -249,8 +250,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps india rate`() {
-        val rate = Rate.India(3f, "INR")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.India(BigDecimal("3"), "INR")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_india,
@@ -265,8 +266,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps iceland rate`() {
-        val rate = Rate.Iceland(3f, "ISK")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Iceland(BigDecimal("3"), "ISK")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_iceland,
@@ -281,8 +282,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps japan rate`() {
-        val rate = Rate.Japan(3f, "JPY")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Japan(BigDecimal("3"), "JPY")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_japan,
@@ -297,8 +298,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps south korea rate`() {
-        val rate = Rate.SouthKorea(3f, "KRW")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.SouthKorea(BigDecimal("3"), "KRW")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_south_korea,
@@ -313,8 +314,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps mexico rate`() {
-        val rate = Rate.Mexico(3f, "MXN")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Mexico(BigDecimal("3"), "MXN")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_mexico,
@@ -329,8 +330,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps malaysia rate`() {
-        val rate = Rate.Malaysia(3f, "MYR")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Malaysia(BigDecimal("3"), "MYR")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_malaysia,
@@ -345,8 +346,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps norway rate`() {
-        val rate = Rate.Norway(3f, "NOK")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Norway(BigDecimal("3"), "NOK")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_norway,
@@ -361,8 +362,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps mew zealand rate`() {
-        val rate = Rate.NewZealand(3f, "NZD")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.NewZealand(BigDecimal("3"), "NZD")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_new_zealand,
@@ -377,8 +378,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps philippine rate`() {
-        val rate = Rate.Philippine(3f, "PHP")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Philippine(BigDecimal("3"), "PHP")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_philippines,
@@ -393,8 +394,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps poland rate`() {
-        val rate = Rate.Poland(3f, "PLN")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Poland(BigDecimal("3"), "PLN")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_poland,
@@ -409,8 +410,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps eu rate`() {
-        val rate = Rate.Europe(3f, "EUR")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Europe(BigDecimal("3"), "EUR")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_europe,
@@ -425,8 +426,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps russia rate`() {
-        val rate = Rate.Russia(3f, "RUB")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Russia(BigDecimal("3"), "RUB")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_russia,
@@ -441,8 +442,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps sweden rate`() {
-        val rate = Rate.Sweden(3f, "SEK")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Sweden(BigDecimal("3"), "SEK")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_sweden,
@@ -457,8 +458,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps singapore rate`() {
-        val rate = Rate.Singapore(3f, "SGD")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Singapore(BigDecimal("3"), "SGD")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_singapore,
@@ -473,8 +474,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps thailand rate`() {
-        val rate = Rate.Thailand(3f, "THB")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.Thailand(BigDecimal("3"), "THB")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_thailand,
@@ -489,8 +490,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps usa rate`() {
-        val rate = Rate.NorthAmerica(3f, "USD")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.NorthAmerica(BigDecimal("3"), "USD")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_usa,
@@ -505,8 +506,8 @@ class RateViewModelMappingTest {
 
     @Test
     fun `maps south africa rate`() {
-        val rate = Rate.SouthAfrica(3f, "ZAR")
-        val model = rate.toViewModel(false, 4f)
+        val rate = Rate.SouthAfrica(BigDecimal("3"), "ZAR")
+        val model = rate.toViewModel(false, BigDecimal("4"))
 
         val expected = RateViewModel(
             R.drawable.ic_south_africa,

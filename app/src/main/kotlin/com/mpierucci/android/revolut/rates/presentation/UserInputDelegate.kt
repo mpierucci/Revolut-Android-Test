@@ -18,16 +18,14 @@ class UserInputDelegate(
 
 
     override fun handleRateClicked(rate: RateViewModel) {
-        _userInput = UserInput(rate.currencyId, rate.convertedValue.toFloatOrZero()).also {
+        _userInput = UserInput(rate.currencyId, rate.convertedValue).also {
             userInputSubject.onNext(it)
         }
     }
 
     override fun handleResponderQuantityChanged(quantity: String) {
-        _userInput = _userInput.copy(responderQuantity = quantity.toFloatOrZero()).also {
+        _userInput = _userInput.copy(responderQuantity = quantity).also {
             userInputSubject.onNext(it)
         }
     }
-
-    private fun String.toFloatOrZero() = toFloatOrNull() ?: 0f
 }

@@ -10,5 +10,5 @@ interface UserInputHandler {
 
     fun handleResponderQuantityChanged(quantity: String)
 
-    data class UserInput(val currencyId: String, val responderQuantity: Float)
+    data class UserInput(val currencyId: String, val responderQuantity: String)
 }

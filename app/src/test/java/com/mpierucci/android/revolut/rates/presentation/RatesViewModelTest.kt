@@ -23,16 +23,24 @@ class RatesViewModelTest {
     private val interactor = mock<RatesInteractor>()
     private val inputDelegate = mock<UserInputHandler>()
     private val savedStateHandle = mock<SavedStateHandle>()
-    private val defaultUserInput = UserInputHandler.UserInput("EUR", 1f)
+    private val defaultUserInput = UserInputHandler.UserInput(
+        Defaults.DEFAULT_CURRENCY_ID, Defaults.DEFAULT_RESPONDER_QUANTITY
+    )
 
     private lateinit var viewModel: RatesViewModel
 
     @Before
     fun setUp() {
-        whenever(interactor.execute(any())).thenReturn(Flowable.just(Result.Success(emptyList())))
+        whenever(interactor.execute(any())).thenReturn(
+            Flowable.just(
+                Result.Success(
+                    emptyList()
+                )
+            )
+        )
         whenever(inputDelegate.userInput).thenReturn(Flowable.empty())
         whenever(savedStateHandle.get<String>(CURRENCY_KEY)).thenReturn(Defaults.DEFAULT_CURRENCY_ID)
-        whenever(savedStateHandle.get<Float>(QUANTITY_KEY)).thenReturn(Defaults.DEFAULT_RESPONDER_QUANTITY)
+        whenever(savedStateHandle.get<String>(QUANTITY_KEY)).thenReturn(Defaults.DEFAULT_RESPONDER_QUANTITY)
         viewModel =
             RatesViewModel(interactor, inputDelegate, savedStateHandle)
     }
